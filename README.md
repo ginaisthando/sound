@@ -2,9 +2,9 @@
 
 Before running this application, make sure you have the following installed on your PC:
 
-- **Node.js** (version 18.0 or higher) - [Download here](https://nodejs.org/)
+- **Node.js** (version 18.0 or higher)
 - **npm** (comes with Node.js) or **yarn** package manager
-- **Git** - [Download here](https://git-scm.com/)
+- **Git**
 
 ## Getting Started
 
