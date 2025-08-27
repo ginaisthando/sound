@@ -1,36 +1,86 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+## Prerequisites
+
+Before running this application, make sure you have the following installed on your PC:
+
+- **Node.js** (version 18.0 or higher) - [Download here](https://nodejs.org/)
+- **npm** (comes with Node.js) or **yarn** package manager
+- **Git** - [Download here](https://git-scm.com/)
 
 ## Getting Started
 
-First, run the development server:
+### 1. Clone the Repository
+
+```bash
+git clone <repository-url>
+cd sound
+```
+
+### 2. Install Dependencies
+
+Navigate to the project directory and install the required packages:
+
+```bash
+npm install
+```
+
+Or if you prefer yarn:
+
+```bash
+yarn install
+```
+
+### 3. Run the Development Server
+
+Start the development server with one of the following commands:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Or with yarn:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+yarn dev
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+The application will start running on [http://localhost:3000](http://localhost:3000).
 
-## Learn More
+### 4. Open in Your Browser
 
-To learn more about Next.js, take a look at the following resources:
+Open your web browser and navigate to [http://localhost:3000](http://localhost:3000) to see the application running.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Available Scripts
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+In the project directory, you can run:
 
-## Deploy on Vercel
+- **`npm run dev`** - Runs the app in development mode with Turbopack
+- **`npm run build`** - Builds the app for production with Turbopack
+- **`npm run start`** - Runs the built app in production mode
+- **`npm run lint`** - Runs ESLint to check for code issues
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Project Structure
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```
+sound/
+├── src/
+│   ├── app/                 # Next.js App Router pages
+│   │   ├── browse/          # Browse sounds page
+│   │   ├── cart/            # Shopping cart page
+│   │   ├── checkout/        # Checkout process
+│   │   ├── creators/        # Creators page
+│   │   ├── free-sounds/     # Free sounds page
+│   │   ├── pack/            # Individual pack pages
+│   │   ├── signin/          # Sign in page
+│   │   ├── signup/          # Sign up page
+│   │   └── subscription/    # Subscription page
+│   ├── components/          # Reusable React components
+│   │   ├── browse/          # Browse-related components
+│   │   ├── home/            # Homepage components
+│   │   ├── layout/          # Layout components
+│   │   ├── pack/            # Pack-related components
+│   │   └── ui/              # UI components
+│   ├── hooks/               # Custom React hooks
+│   └── lib/                 # Utility functions
+├── public/                  # Static assets
+└── package.json            # Project dependencies and scripts
+```
