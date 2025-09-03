@@ -2,7 +2,7 @@
 
 export const dynamic = 'force-dynamic';
 
-import { useState, useMemo } from 'react';
+import { Suspense, useState, useMemo } from 'react';
 import { useSearchParams } from 'next/navigation';
 import { MainLayout } from '@/components/layout/main-layout';
 import { FilterSidebar } from '@/components/browse/filter-sidebar';
@@ -13,10 +13,10 @@ import { Input } from '@/components/ui/input';
 import { MOCK_PACKS } from '@/lib/utils';
 import { Filter, Search } from 'lucide-react';
 
-export default function BrowsePage() {
+function BrowseContent() {
   const searchParams = useSearchParams();
   const initialCategory = searchParams.get('category');
-  
+
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedCategories, setSelectedCategories] = useState<string[]>(
     initialCategory ? [initialCategory] : []
@@ -179,5 +179,13 @@ export default function BrowsePage() {
         />
       </div>
     </MainLayout>
+  );
+}
+
+export default function BrowsePageWrapper() {
+  return (
+    <Suspense fallback={<div>Loading browse page...</div>}>
+      <BrowseContent />
+    </Suspense>
   );
 }
